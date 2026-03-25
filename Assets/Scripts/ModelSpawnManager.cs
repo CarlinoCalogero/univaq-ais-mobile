@@ -47,14 +47,9 @@ public class ModelSpawnManager : MonoBehaviour
         Debug.LogWarning("Starting to render model");
         UpdateDebug($"<color=yellow>RENDERING: {container.name}</color>");
 
-        Task<byte[]> decodeTask = Task.Run(() => Convert.FromBase64String(model.base64Content));
-        
-        yield return new WaitUntil(() => decodeTask.IsCompleted);
-        byte[] content = decodeTask.Result;
-        
         long renderStartTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
         
-        Task<bool> renderModelTask = GLTFHandler.Instantiate(content, container);
+        Task<bool> renderModelTask = GLTFHandler.Instantiate(model.presignedUrl, container);
         yield return new WaitUntil(()=>renderModelTask.IsCompleted);
         
         long renderTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds() - renderStartTime;

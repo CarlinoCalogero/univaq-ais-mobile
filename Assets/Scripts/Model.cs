@@ -24,7 +24,8 @@ public class Interaction {
 
 
 [Serializable]
-public class Model{
+public class Model
+{
     public string id;
 
     public string name;
@@ -37,11 +38,12 @@ public class Model{
 
     public long fileSize;
 
-    public string base64Content;
+    public string presignedUrl;
 
     public Interaction interaction;
 
-    override public string ToString(){
+    override public string ToString()
+    {
         return $"ID: {this.id}, Name: {this.name}, XOffset: {this.xOffset}, YOffset: {this.yOffset}, ZOffset: {this.zOffset}, fileSize: {this.fileSize}, interaction: {this.interaction}";
     }
 }
