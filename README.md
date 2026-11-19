@@ -55,7 +55,10 @@
 
 **AIS Mobile** is a mobile Augmented Reality (AR) application developed as an academic university project at the **University of L'Aquila (UNIVAQ)** within the Master's Degree in Computer Science (Advanced Software Engineering).
 
-The application leverages AR image tracking to detect physical target images in the real world through the device camera. Upon recognizing a target image, the client communicates with a RESTful backend server, retrieves the corresponding 3D asset metadata and presigned URL, and dynamically streams, loads, and instantiates 3D glTF/GLB models at runtime directly anchored in AR space.
+> [!NOTE]  
+> This repository serves as the mobile AR client and works in tandem with the backend service repository: [**univaq-ais-backend**](https://github.com/CarlinoCalogero/univaq-ais-backend).
+
+The application leverages AR image tracking to detect physical target images in the real world through the device camera. Upon recognizing a target image, the client communicates with the RESTful backend server, retrieves the corresponding 3D asset metadata and presigned URL, and dynamically streams, loads, and instantiates 3D glTF/GLB models at runtime directly anchored in AR space.
 
 ### Key Features
 
@@ -90,7 +93,7 @@ Follow the instructions below to get a local copy set up and running on your dev
   * An **ARCore-supported Android device** (running Android 7.0 or later), OR
   * Unity Editor with XR Simulation environments enabled for local testing
 * **Backend Server**:
-  * An accessible backend server hosting the AIS Model REST API (serving `GET /api/models/{modelKey}`)
+  * An accessible backend server hosting the AIS Model REST API (serving `GET /api/models/{modelKey}`), deployed via [univaq-ais-backend](https://github.com/CarlinoCalogero/univaq-ais-backend)
 
 ### Installation
 
@@ -153,6 +156,7 @@ Project Link: [https://github.com/CarlinoCalogero/univaq-ais-mobile](https://git
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
+* [univaq-ais-backend](https://github.com/CarlinoCalogero/univaq-ais-backend)
 * [University of L'Aquila (UNIVAQ)](https://www.univaq.it/)
 * [Unity Technologies](https://unity.com/)
 * [Unity AR Foundation](https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@latest)
